@@ -1,0 +1,294 @@
+* {
+  margin: 0 ;
+  padding: 0 ;
+}
+
+.nav {
+  background-color: #1c1c1c;
+  color: white ;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 15px gray;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  /* align-items: center; */
+  /* border: 2px solid blue; */
+}
+
+.welcome {
+  text-align: center;
+}
+
+.coloumn {
+  /* border: 2px solid green; */
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.mainPageImageBorder{
+  border-radius: 10px;
+  height:250px;
+  position: relative;
+}
+.mainPageImageBorderInfo{
+  color:white;
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  opacity: 0;
+}
+
+
+.mainPageImageBorder:hover {
+  box-shadow: inset 0px -75px 40px -55px black;
+   transition: box-shadow 0.4s ease-in-out;
+}
+
+.mainPageImageBorder:hover .mainPageImageBorderInfo {
+  opacity: 1;
+  transition: .8s;
+
+}
+
+.row {
+  margin : 2px 3px ;
+  /* border: 2px solid orange; */
+}
+
+.PostContainerImage {
+  border-radius: 10px;
+  width: 300px;
+  height: 250px;
+  position: relative;
+  z-index: -2;
+}
+
+.singleImageInfo {
+/* border: 2px solid blue; */
+display: flex;
+justify-content: space-between;
+}
+
+.imgContainer {
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.miniProfileContainer {
+  display: flex;
+}
+
+.fafa {
+  color: #615e5e ;
+}
+
+.miniProfileImage {
+  border-radius:100px ;
+  width:20px ;
+  height:20px ;
+}
+
+.gallerSeven {
+    /* border: 2px solid red; */
+    width: 15%;
+}
+
+.what {
+  /* border: 2px solid green; */
+  width: 15%;
+}
+
+.dont {
+  /* border: 2px solid white ; */
+  width: 15%;
+}
+
+.profile {
+  /* border: 2px solid yellow ; */
+  width: 15%;
+  text-align: right;
+}
+
+.profileImageContainer{
+  justify-content: center;
+}
+
+.profileImage {
+  border-radius:100px ;
+  width:8rem ;
+  height:8rem ;
+
+}
+
+.profileContainer{
+  border: 1px solid #f5f3f0 ;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px #e8e6e3;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 20px 0 0 30px;
+  padding: 8px 1rem 1rem;
+  text-align: center;
+}
+.postPageImageContainer{
+  border:2px solid red;
+  text-align: center;
+  margin: 10px;
+}
+
+.postPageImage {
+
+  padding:5px;
+  margin:10px;
+  border:2px solid blue;
+  height:50%;
+  width:50%;
+}
+
+.stuff{
+  border:2px solid green;
+}
+
+.morestuff{
+  border:2px solid orange;
+}
+.stuffContainer{
+  margin: 10px;
+  padding: 5px;
+  border:2px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentsContainer{
+  border:2px solid silver;
+  margin:10px;
+}
+
+.commentContainer{
+  display: flex;
+  border:2px solid red;
+  margin: 5px;
+  padding: 10px 0px;
+}
+.commentsUserProfileName{
+  border:2px solid blue;
+}
+
+.commentsContent{
+    border:2px solid green;
+}
+
+.commentsUserProfileImage{
+    border:2px solid purple;
+}
+
+.commentsUserProfileContainer{
+  margin: 0 10px;
+}
+
+.numberOfComments{
+  margin: 5px;
+  border:2px solid brown;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* form {
+  background-color: #FFF8E7;
+  border: 1px solid salmon;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 20px 0 0 30px;
+  padding: 0 1rem 1rem;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* body {
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 900px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+header a,
+header button {
+  font-size: 1rem;
+  display: inline-block;
+  background-color: #FFF8E7;
+  border: 1px solid salmon;
+  margin: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: salmon;
+}
+
+main {
+  margin: 1rem;
+}
+
+
+
+form input {
+  margin: 0.25rem 0;
+}
+
+form input[type="submit"] {
+  width: 40%;
+}
+
+form img {
+  width: 150px;
+} */
