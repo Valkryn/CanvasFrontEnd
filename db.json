@@ -1,0 +1,24 @@
+{
+  "photos": [
+    {
+      "id": 1,
+      "posts":"https://images.unsplash.com/photo-1600353770126-87354674287a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80",
+      "view_count": 12
+    },
+    {
+      "id": 2,
+      "posts":"https://images.unsplash.com/photo-1565053266993-18ae409835ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80",
+      "view_count": 3
+    },
+    {
+      "id": 3,
+      "posts":"https://images.unsplash.com/photo-1600136843356-d31bf2fd3958?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2801&q=80",
+      "view-count": 65
+    },
+    {
+      "id": 4,
+      "posts":"https://images.unsplash.com/photo-1600100040525-c76c16877f66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2758&q=80",
+      "view-count": 65
+    }
+  ]
+}
