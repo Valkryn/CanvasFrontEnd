@@ -13,7 +13,7 @@ class Post extends React.Component {
 
 
   render () {
-
+    
   return (
 
     <div className="coloumn">
@@ -21,7 +21,7 @@ class Post extends React.Component {
       <div className="row">
         <Link to={`/posts/${this.props.singleObject.id}`}>
           <div className="mainPageImageBorder" onClick={this.handleclick}>
-            <img className="PostContainerImage" src={`${this.props.singleObject.content}`} alt = {`${this.props.singleObject.content}`}/>
+            <img className="PostContainerImage" src={`${this.props.singleObject.featured_image.url}`} alt = {`${this.props.singleObject.content}`}/>
             <div className="mainPageImageBorderInfo"> {this.props.singleObject.title} </div>
           </div>
         </Link>

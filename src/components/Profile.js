@@ -1,4 +1,5 @@
 import React from 'react'
+import ImageUpload from "./ImageUpload"
 
 
 class Profile extends React.Component {
@@ -32,11 +33,11 @@ class Profile extends React.Component {
     const { username } = this.props.currentUser
 
     return (
-      <div>
+      <div className="thiswiththat">
 
         <form className="profileContainer" onSubmit={this.handleSubmit}>
           <input
-            type="text"
+            type="hidden"
             name="image"
             autoComplete="off"
             value={image}
@@ -58,6 +59,11 @@ class Profile extends React.Component {
 
           <input type="submit" value="Update" />
         </form>
+
+        <div>
+            <ImageUpload handleAddingNewImageToCollection={this.props.handleAddingNewImageToCollection}
+                          currentUser={this.props.currentUser} />
+        </div>
 
 
       </div>

@@ -6,7 +6,7 @@ class CommentForm extends React.Component {
 
   state ={
     content:"",
-    user_id: "",
+    user_id: "5",
     post_id:`${this.props.postId}`
   }
 
@@ -31,6 +31,9 @@ class CommentForm extends React.Component {
       .then((object) => {
         this.props.updateComment(object)
       })
+      this.setState((prevState)=>({
+        content:""
+      }))
   }
 
 
@@ -40,36 +43,44 @@ class CommentForm extends React.Component {
 
     return(
 
-      <div>
+      <div className="CommentFormContainer">
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="commentForm" onSubmit={this.handleSubmit}>
 
-          <textarea
-          name="content"
-          placeholder="Leave a comment"
-          value={this.state.content}
-          onChange={this.handleChange}
-          />
+          <div id="text" className="card v-card v-sheet theme--light elevation-2" ><span className="headline" >Leave a comment</span>
+      <div class="sign-in-wrapper" >
+      <textarea cols="60"
+      rows="2"
+      className="caption disclaimer"
+      name="content"
+      placeholder="Leave a comment"
+      value={this.state.content}
+      onChange={this.handleChange}
+      />
 
-          <label>user_id</label>
-          <input
-            type="text"
-            name="user_id"
-            autoComplete="off"
-            value={this.state.user_id}
-            onChange={this.handleChange}
-          />
 
-          <label>post_id</label>
-          <input
-            type="text"
-            name="post_id"
-            autoComplete="off"
-            value={this.props.postId}
-            onChange={this.handleChange}
-          />
+        <p className="error-message" ></p>
 
-          <input type="submit" value="Submit Comment" />
+        <input
+        type="hidden"
+        name="user_id"
+        autoComplete="off"
+        value={this.state.user_id}
+        onChange={this.handleChange}
+        />
+
+
+        <input
+        type="hidden"
+        name="post_id"
+        autoComplete="off"
+        value={this.props.postId}
+        onChange={this.handleChange}
+        />
+
+        <input type="submit" value="Submit Comment" />
+      </div>
+    </div>
 
         </form>
       </div>

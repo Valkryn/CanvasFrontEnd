@@ -5,9 +5,8 @@ import Login from './Login'
 import NavBar from './NavBar'
 import Profile from './Profile'
 import PostContainer from './PostContainer'
-// import '../index.css';
-import ImageUpload from "./ImageUpload"
 import PostPage from "./PostPage"
+import Filter from "./Filter"
 
 
 
@@ -16,7 +15,11 @@ import PostPage from "./PostPage"
 class App extends React.Component {
   state = {
     currentUser: null,
-    collection:[]
+    collection:[],
+    categories:[],
+    allCollection:[],
+    filtered: false,
+    selectedCategory:""
   }
 
 
@@ -36,11 +39,19 @@ class App extends React.Component {
       })
       .catch((err) => console.error(err))
 
-      fetch("http://localhost:3000/posts")
+    fetch("http://localhost:3000/posts")
     .then(resp => resp.json())
     .then((obj) => {
       this.setState((prevState) => ({
-        collection:obj
+        collection:obj,
+        allCollection:obj
+      }))
+    })
+    fetch("http://localhost:3000/categories")
+    .then(resp => resp.json())
+    .then((obj) => {
+      this.setState((prevState) => ({
+        categories:obj
       }))
     })
   }
@@ -50,9 +61,8 @@ class App extends React.Component {
   }
 
   handleLogin = currentUser => {
-    // set current user, then redirect to home page
     this.setState({ currentUser }, () => {
-      this.props.history.push('/')
+      this.props.history.push('/profile')
     })
   }
 
@@ -92,15 +102,63 @@ class App extends React.Component {
     })
   }
 
+  handleAddingNewImageToCollection = (obj) => {
+    let newObject = obj
+    let copyOfCollection = this.state.collection
+    let newCollection = [newObject, ...copyOfCollection]
+    this.setState((prevState) => ({
+      collection:newCollection
+    }))
+      this.props.history.push('/')
+  }
+
+  selectedCategory = (category) => {
+    let copyOfCollection = this.state.collection
+    let copyOfAllCollection = this.state.allCollection
+    let results = copyOfCollection.filter(obj => obj.category.kind ===category)
+    this.setState((prevState)=>({
+      selectedCategory:category
+    }))
+    if (category === "All"){
+      this.setState((prevState) => ({
+        collection:copyOfAllCollection
+      }))
+    }else if (this.state.filtered === false){
+      this.setState((prevState) => ({
+        collection:results,
+        filtered:true
+      }))
+    } else if (this.state.filtered === true){
+      this.setState((prevState) => ({
+        collection:this.state.allCollection,
+        filtered:false
+      }))
+      this.setState((prevState) => ({
+        collection:results,
+        filtered:true
+      }))
+    }
+
+  }
+
+  handleTitle = () =>{
+    if (this.state.selectedCategory === "All"){
+      return "Gallery Seven"
+    } else if (this.state.selectedCategory === ""){
+      return "Gallery Seven"
+    }else {
+      return this.state.selectedCategory
+    }
+  }
+
   render() {
+
     return (
       <>
         <NavBar currentUser={this.state.currentUser} handleLogout={this.handleLogout} />
 
         <main>
-        <div>
-        <ImageUpload />
-        </div>
+
           <Switch>
 
             <Route path="/signup">
@@ -112,7 +170,10 @@ class App extends React.Component {
             </Route>
 
             <Route path="/profile">
-              {this.state.currentUser ? <Profile currentUser={this.state.currentUser} updateUser={this.updateUser} /> : <Redirect to='/' />}
+              {this.state.currentUser ? <Profile currentUser={this.state.currentUser}
+                                                 updateUser={this.updateUser}
+                                                 handleAddingNewImageToCollection={this.handleAddingNewImageToCollection}
+                                                 collection={this.state.collection}/> : <Redirect to='/' />}
             </Route>
 
             <Route path="/home">
@@ -124,7 +185,8 @@ class App extends React.Component {
 
             <Route path="/">
               <div className="welcome">
-                <h1>Gallery Seven</h1>
+              <Filter categories={this.state.categories} selectedCategory={this.selectedCategory}/>
+                <h1 className="collectionContainerHeader">{this.handleTitle()}</h1>
                 <PostContainer objects={this.state.collection} handleViews={this.handleViews}/>
               </div >
             </Route>

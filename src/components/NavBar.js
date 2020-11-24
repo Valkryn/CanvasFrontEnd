@@ -8,15 +8,19 @@ const NavBar = ({ currentUser, handleLogout }) => {
     <header className="nav">
 
       <div className="gallerSeven">
-        <Link to="/"> Gallery Seven </Link>
+        <Link to="/"> Canvas By G7 </Link>
       </div>
 
-      <div className="what">
-        whats popping?
+      <div className="learn">
+        Learn
       </div>
 
-      <div className="dont">
-        dont mind me just watching
+      <div className="forYou">
+        For you
+      </div>
+
+      <div className="live">
+      Live Feed
       </div>
 
       <div className="profile">
@@ -31,7 +35,8 @@ const NavBar = ({ currentUser, handleLogout }) => {
               <Link to="/login">Login</Link>
             </>
           )}
-      </div>
+
+    </div>
 
     </header>
   )
